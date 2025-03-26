@@ -1,4 +1,4 @@
-import { View, Text,StyleSheet, ScrollView } from 'react-native'
+import { View, Text,StyleSheet, ScrollView, Button } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
 export default function Logs() {
@@ -30,6 +30,11 @@ export default function Logs() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Lista de Logs</Text>
+
+      <View>
+        <Button title="Actualizar registros" onPress={obtenerLogs} />
+      </View>
+      
       <ScrollView contentContainerStyle={styles.scroll}>
       {logs.length > 0 ? (
         logs.map((log, index) => (
